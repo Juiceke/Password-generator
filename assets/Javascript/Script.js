@@ -1,5 +1,27 @@
 // Assignment code here
 
+// assign some variables
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lower = "abcdefghijklmnopqrstuvwxyz";
+var number = "0123456789";
+var special = "!@,#$%&*{}[]/\+=";
+
+
+// prompts for password
+var generatePassword = function() {
+  // how many characters?
+var characters = window.prompt("How many characters would you like in your password? 8-128 characters allowed");
+if (isNaN(characters)){
+  alert("Please enter a number.");
+  return generatePassword()
+  }
+if(characters<8 || length>128){
+  alert("Please enter a number between 8 and 128.");
+  return generatePassword()
+}
+
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -16,3 +38,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
