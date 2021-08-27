@@ -3,8 +3,9 @@
 // assign some variables
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lower = "abcdefghijklmnopqrstuvwxyz";
-var number = "0123456789";
+var num = "0123456789";
 var special = "!@,#$%&*{}[]/\+=";
+var Chosen = "";
 
 
 // prompts for password
@@ -20,7 +21,15 @@ if(characters<8 || length>128){
   return generatePassword()
 }
 
-
+// what character types?
+var wantUpper = confirm("Include upper case letters?");
+var wantLower = confirm("Include lower case letters?");
+var wantNum = confirm("Include numbers?");
+var wantSpecial = confirm("Include special characters?");
+if(wantUpper === false && wantLower === false && wantNum === false && wantSpecial === false) {
+  alert("Please choose at least one of the character types.")
+  return generatePassword()
+}
 }
 
 // Get references to the #generate element
